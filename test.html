@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>织语 CSS 能力诊断</title>
+<style>
+body{margin:0;padding:14px;background:#1a1418;color:#eee;font:13px/1.7 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;}
+h1{font-size:16px;margin:0 0 4px;color:#ff9ecb;}
+.sub{font-size:11px;color:#9a8a92;margin-bottom:14px;}
+#out{background:#241c22;border:1px solid #4a3a44;border-radius:10px;padding:10px;margin-bottom:16px;font:12px/1.9 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all;}
+.box{width:100%;box-sizing:border-box;margin:8px 0;padding:10px 12px;background:#2a2028;border:1px solid #4a3a44;border-radius:10px;}
+.lab{font-size:11px;color:#ff9ecb;font-weight:bold;margin-bottom:6px;}
+.fill{height:10px;border-radius:5px;background:linear-gradient(90deg,#ffc2d8,#ff69b4);}
+.gradbar{height:14px;border-radius:5px;background-image:linear-gradient(90deg,#ffc2d8 0%,#ff69b4 25%,#ffc2d8 50%,#b9dcff 75%,#ffc2d8 100%);background-size:200% auto;}
+.txt{font-weight:bold;color:#ff9ecb;}
+.sq{width:22px;height:22px;border-radius:5px;background:#ff69b4;}
+.pseudo{position:relative;height:22px;background:#3a2c34;border-radius:5px;overflow:hidden;}
+.ov{display:inline-block;width:20px;height:20px;background:#ff69b4;border-radius:4px;vertical-align:middle;}
+
+/* ---------- 关键帧定义（逐个测试写法） ---------- */
+/* 1 两段式 · opacity */
+@keyframes t1{0%{opacity:1}100%{opacity:.25}}
+/* 2 两段式 · transform */
+@keyframes t2{0%{transform:translateX(0)}100%{transform:translateX(40px)}}
+/* 3 三段式 · opacity */
+@keyframes t3{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+/* 4 逗号合并百分比 · opacity */
+@keyframes t4{0%,100%{opacity:1}50%{opacity:.25}}
+/* 5 逗号合并两段 · opacity */
+@keyframes t5{0%,100%{opacity:.3}50%{opacity:1}}
+/* 6 box-shadow */
+@keyframes t6{0%{box-shadow:0 0 0 rgba(255,105,180,0)}100%{box-shadow:0 0 14px rgba(255,105,180,0.95)}}
+/* 7 text-shadow */
+@keyframes t7{0%{text-shadow:0 0 2px rgba(255,105,180,.3)}100%{text-shadow:0 0 12px rgba(255,105,180,1)}}
+/* 8 background-position */
+@keyframes t8{0%{background-position:0% center}100%{background-position:200% center}}
+/* 9 rotate */
+@keyframes t9{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+/* 10 伪元素动画 */
+@keyframes t10{0%{left:-60%}100%{left:100%}}
+/* 11 多行写法 · opacity */
+@keyframes t11{
+0%{opacity:1}
+100%{opacity:.25}
+}
+/* 12 alternate 呼吸 */
+@keyframes t12{0%{opacity:1}100%{opacity:.35}}
+/* 13 scale + opacity */
+@keyframes t13{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:scale(1)}}
+/* 14 长时长 · 由脚本快照判断 */
+
+.t1{animation:t1 1.2s linear infinite;}
+.t2{animation:t2 1.2s linear infinite alternate;}
+.t3{animation:t3 1.2s linear infinite;}
+.t4{animation:t4 1.2s linear infinite;}
+.t5{animation:t5 1.2s linear infinite;}
+.t6{animation:t6 1.2s ease-in-out infinite alternate;}
+.t7{animation:t7 1.2s ease-in-out infinite alternate;}
+.t8{animation:t8 3s linear infinite;}
+.t9{animation:t9 2s linear infinite;}
+.pseudo::after{content:"";position:absolute;top:0;left:-60%;width:55%;height:100%;background:linear-gradient(90deg,transparent,#ff69b4,transparent);animation:t10 2s linear infinite;}
+.t11{animation:t11 1.2s linear infinite;}
+.t12{animation:t12 1.6s ease-in-out infinite alternate;}
+.t13{animation:t13 1s ease-out both;}
+</style></head>
+<body>
+<h1>织语 CSS 能力诊断</h1>
+<div class="sub">对照下表 + 下方色块的动静，判断你的内核支持哪些写法</div>
+<div id="out">正在检测…</div>
+
+<div class="box"><div class="lab">1  两段式 opacity（已证实可用）</div><div class="txt t1">这段字应该忽明忽暗</div></div>
+<div class="box"><div class="lab">2  两段式 transform translateX</div><span class="ov t2"></span></div>
+<div class="box"><div class="lab">3  三段式 opacity（0/50/100）</div><div class="txt t3">这段字应该一明一暗一明</div></div>
+<div class="box"><div class="lab">4  逗号合并 0%,100% + 50%</div><div class="txt t4">同上节奏</div></div>
+<div class="box"><div class="lab">5  逗号合并 0%,100% + 50%（反相）</div><div class="txt t5">这段字应该一暗一明</div></div>
+<div class="box"><div class="lab">6  box-shadow 发光</div><div class="sq t6"></div></div>
+<div class="box"><div class="lab">7  text-shadow 发光</div><div class="txt t7">这段字应该发光呼吸</div></div>
+<div class="box"><div class="lab">8  background-position 流光</div><div class="gradbar t8"></div></div>
+<div class="box"><div class="lab">9  transform rotate 旋转</div><span class="ov t9">✦</span></div>
+<div class="box"><div class="lab">10  伪元素 ::after 动画（扫光）</div><div class="pseudo"></div></div>
+<div class="box"><div class="lab">11  多行写法 opacity</div><div class="txt t11">应忽明忽暗</div></div>
+<div class="box"><div class="lab">12  alternate 呼吸</div><div class="txt t12">应缓慢呼吸</div></div>
+<div class="box"><div class="lab">13  scale + opacity 入场（both）</div><div class="txt t13">应在载入时淡入一次</div></div>
+
+<script>
+window.addEventListener('load',function(){
+  var items=[
+    ['t1','1 两段式 opacity'],
+    ['t2','2 两段式 transform'],
+    ['t3','3 三段式 (0/50/100)'],
+    ['t4','4 逗号 0%,100%+50%'],
+    ['t5','5 逗号 反相'],
+    ['t6','6 box-shadow'],
+    ['t7','7 text-shadow'],
+    ['t8','8 background-position'],
+    ['t9','9 rotate'],
+    ['t10','10 伪元素'],
+    ['t11','11 多行写法'],
+    ['t12','12 alternate'],
+    ['t13','13 scale+opacity']
+  ];
+  var sel={t1:'.t1',t2:'.t2',t3:'.t3',t4:'.t4',t5:'.t5',t6:'.t6',t7:'.t7',t8:'.t8',t9:'.t9',t10:'.pseudo',t11:'.t11',t12:'.t12',t13:'.t13'};
+  var lines=[], bound=0, running=0;
+  items.forEach(function(it){
+    var el=document.querySelector(sel[it[0]]);
+    if(!el){lines.push(it[1]+' : 无元素');return;}
+    var cs = (it[0]==='t10') ? getComputedStyle(el,'::after') : getComputedStyle(el);
+    var name=cs.animationName, dur=cs.animationDuration;
+    var ok=(name&&name!=='none');
+    if(ok)bound++;
+    lines.push((ok?'[绑定] ':'[未绑定] ')+it[1]+'  name='+name+'  dur='+dur);
+  });
+  // 是否真的在动：对 t9（旋转）取两次矩阵快照
+  var e9=document.querySelector('.t9');
+  var m1=getComputedStyle(e9).transform;
+  setTimeout(function(){
+    var m2=getComputedStyle(e9).transform;
+    var moving=(m1!==m2 && m2!=='none');
+    if(moving)running=1;
+    var ua=navigator.userAgent;
+    document.getElementById('out').textContent =
+      '绑定关键帧: '+bound+'/'+items.length+'\n'+
+      '旋转实际在动: '+(moving?'是':'否')+'\n'+
+      '屏幕: '+window.innerWidth+'x'+window.innerHeight+'  DPR='+window.devicePixelRatio+'\n'+
+      'UA: '+ua+'\n'+
+      '----\n'+lines.join('\n');
+  },700);
+});
+</script>
+</body></html>
