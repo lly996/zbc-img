@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>html,body{margin:0;padding:0;background:#f7eef4;}body{padding:10px 0 24px;}[data-toggle]{display:none;}[data-toggle].tg-open{display:block;}
+/* ===== 魔法少女 · 模块化 UI v3（无 table / 无 float / 无 grid） ===== */
+.mg-bar{width:96%;max-width:96%;box-sizing:border-box;margin:0 auto 8px;padding:9px 12px;background:rgba(255,240,245,0.9);border:1px solid #ffb6c1;border-left:4px solid #ff69b4;border-radius:12px;box-shadow:0 2px 10px rgba(255,182,193,0.25);font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;text-align:center;overflow:hidden;word-break:break-word;}
+.mg-t{display:inline-block;font-size:12px;font-weight:bold;color:#ff1493;margin:0 5px;white-space:nowrap;}
+.mg-l{display:inline-block;font-size:12px;font-weight:bold;color:#ba55d3;margin:0 5px;max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mg-w{display:inline-block;font-size:12px;font-weight:bold;color:#1e90ff;margin:0 5px;white-space:nowrap;}
+
+.mg-state{width:96%;max-width:96%;box-sizing:border-box;margin:0 auto 8px;padding:10px 12px;background:rgba(255,240,245,0.86);border:1px solid rgba(255,105,180,0.45);border-left:4px solid #ff1493;border-radius:12px;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;}
+.mg-state i{display:block;height:7px;border-radius:4px;background:linear-gradient(90deg,#ffc2d8 0%,#ff69b4 34%,#ba55d3 67%,#4a1042 100%);}
+.mg-st-h{display:block;font-size:11.5px;font-weight:900;color:#c41e7a;letter-spacing:1px;margin-bottom:7px;}
+.mg-st-m{display:block;margin-top:6px;font-size:9.5px;line-height:1.5;color:#8a6a80;text-align:center;letter-spacing:0.5px;}
+
+.mg-card{width:96%;max-width:96%;box-sizing:border-box;margin:8px auto;padding:16px 18px;background:linear-gradient(160deg,#ffffff 0%,#fff0f5 50%,#f0f8ff 100%);border:2px solid #ffb6c1;border-radius:18px;box-shadow:0 4px 15px rgba(255,182,193,0.45),inset 0 0 20px rgba(255,240,245,0.8);position:relative;overflow:hidden;color:#4a3b4a;font-size:15px;line-height:1.8;letter-spacing:0.5px;word-break:break-word;}
+.mg-c1{position:absolute;top:6px;left:6px;width:14px;height:14px;border-top:1.5px solid rgba(255,105,180,0.55);border-left:1.5px solid rgba(255,105,180,0.55);border-radius:3px 0 0 0;}
+.mg-c2{position:absolute;bottom:6px;right:6px;width:14px;height:14px;border-bottom:1.5px solid rgba(255,105,180,0.55);border-right:1.5px solid rgba(255,105,180,0.55);border-radius:0 0 3px 0;}
+.mg-in{position:relative;display:block;}
+
+.mg-key{display:inline-block;box-sizing:border-box;padding:1px 9px 1px 7px;margin:0 1px;color:#c41e7a;font-weight:bold;background:linear-gradient(90deg,rgba(255,182,193,0.45),rgba(255,240,245,0.5) 60%,rgba(255,182,193,0.2));border-top:1px solid rgba(255,105,180,0.5);border-bottom:1px solid rgba(255,105,180,0.5);border-radius:3px;}
+.mg-line{display:inline;color:#ff1493;font-weight:900;background:rgba(255,182,193,0.25);padding:2px 6px;border-radius:6px;}
+
+.mg-dmwrap{width:96%;max-width:96%;box-sizing:border-box;margin:10px auto 8px;background:linear-gradient(160deg,#1a0f1c 0%,#241428 55%,#1a0f1c 100%);border:1px solid rgba(255,105,180,0.45);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(120,20,90,0.28);}
+.mg-dmhead{display:block;padding:9px 12px;background:linear-gradient(90deg,rgba(255,105,180,0.22),rgba(186,85,211,0.14),rgba(255,105,180,0.22));border-bottom:1px solid rgba(255,105,180,0.3);font-size:12px;font-weight:900;color:#ff9ecb;letter-spacing:1.5px;}
+.mg-dmhead b{float:right;font-weight:normal;font-size:9px;color:rgba(255,158,203,0.6);letter-spacing:2px;font-family:'Courier New',monospace;}
+.mg-dmbody{display:block;padding:9px 10px 11px;}
+.mg-dm{display:block;box-sizing:border-box;margin:5px 0;padding:7px 10px;background:rgba(255,255,255,0.055);border-radius:8px;border-left:3px solid #ff69b4;font-size:12px;line-height:1.55;}
+.mg-dn{display:inline-block;color:#ff9ecb;font-weight:bold;margin-right:7px;white-space:nowrap;}
+.mg-dt{display:inline;color:#c9b8c9;}
+
+.mg-btn{display:block;box-sizing:border-box;width:96%;max-width:96%;margin:8px auto;padding:12px 34px;border:1.5px solid rgba(255,105,180,0.75);border-radius:12px;background:linear-gradient(135deg,rgba(255,240,245,0.96),rgba(255,228,240,0.9));box-shadow:0 3px 14px rgba(255,105,180,0.25),inset 0 1px 0 rgba(255,255,255,0.9);cursor:pointer;text-align:center;font-size:13.5px;font-weight:900;color:#c41e7a;letter-spacing:1px;position:relative;overflow:hidden;word-break:break-word;}
+.mg-btn i{position:absolute;left:12px;top:50%;margin-top:-9px;font-style:normal;font-size:14px;color:#ff69b4;}
+.mg-btn b{position:absolute;right:12px;top:50%;margin-top:-10px;font-weight:normal;font-size:15px;color:rgba(255,105,180,0.7);}
+
+.mg-menu{width:96%;max-width:96%;box-sizing:border-box;margin:12px auto 0;padding:11px 14px;background:rgba(255,240,245,0.92);border:1px solid #ffb6c1;border-left:4px solid #ff69b4;border-radius:12px 12px 0 0;cursor:pointer;box-shadow:0 2px 10px rgba(255,182,193,0.28);overflow:hidden;}
+.mg-menu-h{display:inline-block;font-size:12px;font-weight:900;color:#ff1493;letter-spacing:1.5px;}
+.mg-menu-e{display:inline-block;font-size:9px;color:#d8a0c8;letter-spacing:2px;font-family:'Courier New',monospace;margin-left:6px;}
+.mg-menu-a{float:right;font-size:12px;color:#ff69b4;}
+.mg-menubody{width:96%;max-width:96%;box-sizing:border-box;margin:0 auto;padding:12px;background:rgba(255,240,245,0.92);border:1px solid #ffb6c1;border-top:none;border-radius:0 0 12px 12px;box-shadow:0 4px 12px rgba(255,182,193,0.25);}
+.mg-mi{display:block;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;background:rgba(255,255,255,0.92);border:1px solid rgba(255,105,180,0.55);border-left:3px solid #ff69b4;border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:bold;color:#c41e7a;}
+.mg-mi:last-child{margin-bottom:0;}
+</style></head><body><div class="mg-card"><i class="mg-c1"></i><i class="mg-c2"></i><span class="mg-in"><div class="mg-state"><span class="mg-st-h">🩸 暗纹阶梯</span><i></i><span class="mg-st-m">轻度 疲惫·失眠 ｜ 中度 幻觉·幻听 ｜ 重度 暗纹·竖瞳 → 堕影者</span></div>
+<div class="mg-bar"><span class="mg-t">⌚ 23:47</span><span class="mg-l">📍 洁利斯康城核心区·第七号街区</span><span class="mg-w">☁ 细雨</span></div>
+霓虹在湿透的柏油路上碎成一片。你拉了拉兜帽，把脸藏进阴影里。雨水顺着排水沟流走，带走了一些不该被看见的东西。
+
+<span class="mg-key">✦ 契约的印记在锁骨处微微发烫 ✦</span>——那是魔力正在消耗的信号。你能感觉到它在皮肤下面一点点变亮。
+
+<span class="mg-line">“别动。”</span>白鸦的声音贴着你耳边落下，冷得像金属。她没看你，目光钉在巷口那片翻涌的黑暗上。
+
+<div class="mg-dmwrap"><span class="mg-dmhead">🎭 内心弹幕<b>INNER VOICE</b></span><span class="mg-dmbody"><span class="mg-dm"><span class="mg-dn">白鸦</span><span class="mg-dt">又要带新人，真麻烦，希望别拖后腿。</span></span><span class="mg-dm"><span class="mg-dn">颜元元</span><span class="mg-dt">她身上有血腥味，得赶紧找个机会给她包扎。</span></span></span></div>
+
+<div class="mg-btn" onclick="sendMsg('用魔法轰开巷口')"><i>✦</i>用魔法轰开巷口<b>›</b></div></span></div><div class="mg-menu" onclick="toggle('shortcut_wrap','closed')"><span class="mg-menu-h">🌟 魔法指令</span><span class="mg-menu-e">MAGIC MENU</span><span class="mg-menu-a">▾ 展开</span></div><div data-toggle="shortcut_wrap" data-toggle-default="closed"><div class="mg-menubody"><span class="mg-mi">⭐ 查看当前等级</span><span class="mg-mi">📖 人物档案</span><span class="mg-mi">🩸 查看精神污染</span><span class="mg-mi">🎲 随机事件</span><span class="mg-mi">📑 剧情总结</span></div></div>
+<script>function toggle(id){var e=document.querySelector('[data-toggle="'+id+'"]');if(e)e.classList.toggle('tg-open');}
+window.addEventListener('load',function(){var e=document.querySelector('[data-toggle="shortcut_wrap"]');if(e)e.classList.add('tg-open');});</script></body></html>
