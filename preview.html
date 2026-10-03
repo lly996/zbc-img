@@ -1,0 +1,141 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>魔法少女 · 全特效预览</title>
+<style>html,body{margin:0;padding:0;background:#f7eef4;}body{padding:10px 0 24px;}
+html,body{margin:0;padding:0;background:#f7eef4;}body{padding:10px 0 24px;}[data-toggle]{display:none;}[data-toggle].tg-open{display:block;}
+/* ===== 魔法少女 · 模块化 UI v3（无 table / 无 float / 无 grid） ===== */
+.mg-bar{width:96%;max-width:96%;box-sizing:border-box;margin:0 auto 8px;padding:9px 12px;background:rgba(255,240,245,0.9);border:1px solid #ffb6c1;border-left:4px solid #ff69b4;border-radius:12px;box-shadow:0 2px 10px rgba(255,182,193,0.25);font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;text-align:center;overflow:hidden;word-break:break-word;}
+.mg-t{display:inline-block;font-size:12px;font-weight:bold;color:#ff1493;margin:0 5px;white-space:nowrap;}
+.mg-l{display:inline-block;font-size:12px;font-weight:bold;color:#ba55d3;margin:0 5px;max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mg-w{display:inline-block;font-size:12px;font-weight:bold;color:#1e90ff;margin:0 5px;white-space:nowrap;}
+
+.mg-state{width:96%;max-width:96%;box-sizing:border-box;margin:0 auto 8px;padding:10px 12px;background:rgba(255,240,245,0.86);border:1px solid rgba(255,105,180,0.45);border-left:4px solid #ff1493;border-radius:12px;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;}
+.mg-state i{display:block;height:7px;border-radius:4px;background:linear-gradient(90deg,#ffc2d8 0%,#ff69b4 34%,#ba55d3 67%,#4a1042 100%);}
+.mg-st-h{display:block;font-size:11.5px;font-weight:900;color:#c41e7a;letter-spacing:1px;margin-bottom:7px;}
+.mg-st-m{display:block;margin-top:6px;font-size:9.5px;line-height:1.5;color:#8a6a80;text-align:center;letter-spacing:0.5px;}
+
+.mg-card{width:96%;max-width:96%;box-sizing:border-box;margin:8px auto;padding:16px 18px;background:linear-gradient(160deg,#ffffff 0%,#fff0f5 50%,#f0f8ff 100%);border:2px solid #ffb6c1;border-radius:18px;box-shadow:0 4px 15px rgba(255,182,193,0.45),inset 0 0 20px rgba(255,240,245,0.8);position:relative;overflow:hidden;color:#4a3b4a;font-size:15px;line-height:1.8;letter-spacing:0.5px;word-break:break-word;}
+.mg-c1{position:absolute;top:6px;left:6px;width:14px;height:14px;border-top:1.5px solid rgba(255,105,180,0.55);border-left:1.5px solid rgba(255,105,180,0.55);border-radius:3px 0 0 0;}
+.mg-c2{position:absolute;bottom:6px;right:6px;width:14px;height:14px;border-bottom:1.5px solid rgba(255,105,180,0.55);border-right:1.5px solid rgba(255,105,180,0.55);border-radius:0 0 3px 0;}
+.mg-in{position:relative;display:block;}
+
+.mg-key{display:inline-block;box-sizing:border-box;padding:1px 9px 1px 7px;margin:0 1px;color:#c41e7a;font-weight:bold;background:linear-gradient(90deg,rgba(255,182,193,0.45),rgba(255,240,245,0.5) 60%,rgba(255,182,193,0.2));border-top:1px solid rgba(255,105,180,0.5);border-bottom:1px solid rgba(255,105,180,0.5);border-radius:3px;}
+.mg-line{display:inline;color:#ff1493;font-weight:900;background:rgba(255,182,193,0.25);padding:2px 6px;border-radius:6px;}
+
+.mg-dmwrap{width:96%;max-width:96%;box-sizing:border-box;margin:10px auto 8px;background:linear-gradient(160deg,#1a0f1c 0%,#241428 55%,#1a0f1c 100%);border:1px solid rgba(255,105,180,0.45);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(120,20,90,0.28);}
+.mg-dmhead{display:block;padding:9px 12px;background:linear-gradient(90deg,rgba(255,105,180,0.22),rgba(186,85,211,0.14),rgba(255,105,180,0.22));border-bottom:1px solid rgba(255,105,180,0.3);font-size:12px;font-weight:900;color:#ff9ecb;letter-spacing:1.5px;}
+.mg-dmhead b{float:right;font-weight:normal;font-size:9px;color:rgba(255,158,203,0.6);letter-spacing:2px;font-family:'Courier New',monospace;}
+.mg-dmbody{display:block;padding:9px 10px 11px;}
+.mg-dm{display:block;box-sizing:border-box;margin:5px 0;padding:7px 10px;background:rgba(255,255,255,0.055);border-radius:8px;border-left:3px solid #ff69b4;font-size:12px;line-height:1.55;}
+.mg-dn{display:inline-block;color:#ff9ecb;font-weight:bold;margin-right:7px;white-space:nowrap;}
+.mg-dt{display:inline;color:#c9b8c9;}
+
+.mg-btn{display:block;box-sizing:border-box;width:96%;max-width:96%;margin:8px auto;padding:12px 34px;border:1.5px solid rgba(255,105,180,0.75);border-radius:12px;background:linear-gradient(135deg,rgba(255,240,245,0.96),rgba(255,228,240,0.9));box-shadow:0 3px 14px rgba(255,105,180,0.25),inset 0 1px 0 rgba(255,255,255,0.9);cursor:pointer;text-align:center;font-size:13.5px;font-weight:900;color:#c41e7a;letter-spacing:1px;position:relative;overflow:hidden;word-break:break-word;}
+.mg-btn i{position:absolute;left:12px;top:50%;margin-top:-9px;font-style:normal;font-size:14px;color:#ff69b4;}
+.mg-btn b{position:absolute;right:12px;top:50%;margin-top:-10px;font-weight:normal;font-size:15px;color:rgba(255,105,180,0.7);}
+
+.mg-menu{width:96%;max-width:96%;box-sizing:border-box;margin:12px auto 0;padding:11px 14px;background:rgba(255,240,245,0.92);border:1px solid #ffb6c1;border-left:4px solid #ff69b4;border-radius:12px 12px 0 0;cursor:pointer;box-shadow:0 2px 10px rgba(255,182,193,0.28);overflow:hidden;}
+.mg-menu-h{display:inline-block;font-size:12px;font-weight:900;color:#ff1493;letter-spacing:1.5px;}
+.mg-menu-e{display:inline-block;font-size:9px;color:#d8a0c8;letter-spacing:2px;font-family:'Courier New',monospace;margin-left:6px;}
+.mg-menu-a{float:right;font-size:12px;color:#ff69b4;}
+.mg-menubody{width:96%;max-width:96%;box-sizing:border-box;margin:0 auto;padding:12px;background:rgba(255,240,245,0.92);border:1px solid #ffb6c1;border-top:none;border-radius:0 0 12px 12px;box-shadow:0 4px 12px rgba(255,182,193,0.25);}
+.mg-mi{display:block;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;background:rgba(255,255,255,0.92);border:1px solid rgba(255,105,180,0.55);border-left:3px solid #ff69b4;border-radius:9px;cursor:pointer;font-size:12.5px;font-weight:bold;color:#c41e7a;}
+.mg-mi:last-child{margin-bottom:0;}
+
+
+/* ═══ 特效层 ═══ */
+@keyframes mgFlow{0%{background-position:0% center}100%{background-position:200% center}}
+.mg-bar{background-image:linear-gradient(90deg,rgba(255,240,245,0.9) 0%,rgba(255,214,232,0.95) 25%,rgba(255,240,245,0.9) 50%,rgba(232,240,255,0.95) 75%,rgba(255,240,245,0.9) 100%);background-size:200% auto;animation:mgFlow 6s linear infinite;}
+@keyframes mgBreath{0%{text-shadow:0 0 3px rgba(255,105,180,0.35)}100%{text-shadow:0 0 10px rgba(255,105,180,0.85),0 0 20px rgba(255,20,147,0.35)}}
+.mg-c1t{animation:mgBreath 3.2s ease-in-out infinite alternate;}
+@keyframes mgCorrupt{0%{opacity:.78}100%{opacity:1}}
+.mg-state i{animation:mgCorrupt 3.6s ease-in-out infinite alternate;}
+@keyframes mgDangerBlink{0%{opacity:1}100%{opacity:.35}}
+.mg-st-lv{animation:mgDangerBlink 1.5s ease-in-out infinite alternate;}
+@keyframes mgGlow{0%{opacity:.35}100%{opacity:.9}}
+.mg-k1,.mg-k2{animation:mgGlow 4.2s ease-in-out infinite alternate;}
+@keyframes mgKey{0%{box-shadow:0 0 0 rgba(255,105,180,0)}100%{box-shadow:0 0 9px rgba(255,105,180,0.5)}}
+.mg-key{animation:mgKey 2.6s ease-in-out infinite alternate;}
+@keyframes mgQuote{0%{background:rgba(255,182,193,0.25)}100%{background:rgba(255,182,193,0.5)}}
+.mg-quote{animation:mgQuote 3.4s ease-in-out infinite alternate;}
+@keyframes mgDmIn{0%{opacity:0;transform:translateY(5px)}100%{opacity:1;transform:translateY(0)}}
+.mg-dm{animation:mgDmIn .55s ease-out both;}
+.mg-dm:nth-child(2){animation-delay:.14s}
+.mg-dm:nth-child(3){animation-delay:.28s}
+.mg-dm:nth-child(4){animation-delay:.42s}
+@keyframes mgNeon{0%{text-shadow:0 0 4px rgba(255,105,180,0.5)}100%{text-shadow:0 0 12px rgba(255,105,180,0.95),0 0 24px rgba(186,85,211,0.55)}}
+.mg-dmhead{animation:mgNeon 3.4s ease-in-out infinite alternate;}
+@keyframes mgSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.mg-btn i{display:inline-block;animation:mgSpin 6s linear infinite;}
+@keyframes mgBtnGlow{0%{box-shadow:0 3px 14px rgba(255,105,180,0.25)}100%{box-shadow:0 3px 20px rgba(255,105,180,0.5)}}
+.mg-btn{animation:mgBtnGlow 3.6s ease-in-out infinite alternate;}
+@keyframes mgSlideIn{0%{opacity:0;transform:translateX(-6px)}100%{opacity:1;transform:translateX(0)}}
+.mg-npc,.mg-prof{animation:mgSlideIn .5s ease-out both;}
+@keyframes mgGoodGlow{0%{box-shadow:0 0 0 rgba(76,175,80,0)}100%{box-shadow:0 0 8px rgba(76,175,80,0.5)}}
+.mg-tag{animation:mgGoodGlow 3s ease-in-out infinite alternate;}
+.mg-sign{animation:mgCorrupt 4.5s ease-in-out infinite alternate;}
+
+/* 检测面板 */
+.diag{width:96%;max-width:96%;box-sizing:border-box;margin:12px auto 18px;padding:10px 12px;background:#241c22;border:1px solid #4a3a44;border-radius:10px;color:#eee;font:11px/1.85 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all;}
+.diag b{color:#ff9ecb;}
+
+</style></head><body>
+
+<div class="diag" id="diag">检测中…</div>
+
+<div class="mg-bar"><span class="mg-seg mg-c1t">⌚ 凌晨2:10</span><span class="mg-seg mg-c2t">📍 圣盾会总部</span><span class="mg-seg mg-c3t">☁ 暴雨</span><span class="mg-seg mg-c4t">◈ 中度</span></div>
+<div class="mg-state"><span class="mg-st-h">🩸 精神污染 · <em class="mg-st-lv">中度</em></span><i></i><span class="mg-st-m">轻度 疲惫·失眠 ｜ 中度 幻觉·幻听 ｜ 重度 暗纹·竖瞳 → 堕影者</span></div>
+<div class="mg-card"><i class="mg-k1"></i><i class="mg-k2"></i><span class="mg-in">冰冷的雨水顺着你的发梢滴落，汇聚在下巴尖，悬而未决。<br><br><span class="mg-key">✦ 契约的印记在锁骨处发烫 ✦</span><br><br><span class="mg-quote">“别动。”</span>沈清歌的声音贴着你耳边落下。</span></div>
+<div class="mg-panel"><span class="mg-nm">林晚</span><span class="mg-bd">契约者 · <b>结丹阶</b></span><span class="mg-mt">魔力值<b>42 / 100</b></span><span class="mg-br"><em style="width:42%;"></em></span><span class="mg-mt">理智值<b>68 / 100</b></span><span class="mg-br"><em class="m3" style="width:68%;"></em></span></div>
+<div class="mg-npc"><span class="mg-npc-h">👤 <em class="mg-npc-n">沈清歌</em></span><span class="mg-pr"><b>势力</b><span>圣盾会执行部</span></span><span class="mg-pr"><b>状态</b><span>戒备，手按在配枪上</span></span></div>
+<div class="mg-dmwrap"><span class="mg-dmhead">🎭 内心弹幕<b>INNER VOICE</b></span><span class="mg-dmbody"><span class="mg-dm"><span class="mg-dn">沈清歌</span>这孩子连伞都没带。</span><span class="mg-dm"><span class="mg-dn">白鸦</span>又要带新人，真麻烦。</span><span class="mg-dm"><span class="mg-dn">颜元元</span>她身上有血腥味。</span></span></div>
+<div class="mg-btn" onclick="void 0"><i>✦</i>跟随沈清歌进入大楼<b>›</b></div>
+<div class="mg-prof"><span class="mg-ph">🪪 新登场</span><span class="mg-pr"><b>角色</b><span>沈清歌</span></span><span class="mg-pr"><b>身份</b><span>圣盾会高级督察</span></span></div>
+<div class="mg-world"><span class="mg-ws">🏙 <b>洁利斯康城</b></span><span class="mg-ws">◈ <b>都市奇幻·克苏鲁</b></span><span class="mg-ws">📖 <b>第一章 雨夜的邀请函</b></span></div>
+<div class="mg-sign">MAGICAL GIRL STRANGE TALES</div>
+
+<script>
+window.addEventListener('load',function(){
+  var list=[
+    ['.mg-bar','① 时间栏流光'],
+    ['.mg-c1t','③ 时间文字呼吸'],
+    ['.mg-state i','④ 污染条呼吸'],
+    ['.mg-k1','⑤ 正文角星屑'],
+    ['.mg-key','⑥ 契约印柔光'],
+    ['.mg-quote','⑦ 台词底光'],
+    ['.mg-dm','⑧ 弹幕逐条浮现'],
+    ['.mg-dmhead','⑧b 弹幕头霓虹'],
+    ['.mg-btn','⑨ 按钮光晕'],
+    ['.mg-btn i','⑨b 星标旋转'],
+    ['.mg-npc','⑪ 人物卡滑入'],
+    ['.mg-tag','⑩ 判定标签'],
+    ['.mg-sign','⑫ 页尾呼吸']
+  ];
+  var snap={}, lines=[], bound=0;
+  list.forEach(function(it){
+    var e=document.querySelector(it[0]);
+    if(!e){lines.push('[无元素] '+it[1]);return;}
+    var cs=getComputedStyle(e);
+    var n=cs.animationName;
+    if(n&&n!=='none')bound++;
+    snap[it[0]]=(cs.opacity+'|'+cs.transform+'|'+cs.textShadow+'|'+cs.backgroundPosition+'|'+cs.boxShadow);
+    lines.push((n&&n!=='none'?'[绑定] ':'[未绑] ')+it[1]+'  name='+n);
+  });
+  setTimeout(function(){
+    var moved=[];
+    list.forEach(function(it){
+      var e=document.querySelector(it[0]); if(!e)return;
+      var cs=getComputedStyle(e);
+      var now=(cs.opacity+'|'+cs.transform+'|'+cs.textShadow+'|'+cs.backgroundPosition+'|'+cs.boxShadow);
+      if(now!==snap[it[0]]){moved.push(it[1]);}
+    });
+    var d=document.getElementById('diag');
+    d.innerHTML='<b>织语 CSS 特效诊断</b>\n'+'绑定 animation: '+bound+'/'+list.length+
+      '\n900ms 内实际在动: '+moved.length+' 项\n'+
+      (moved.length?('  → '+moved.join('、')):'  → 没有任何一项在动！')+
+      '\n屏幕 '+window.innerWidth+'x'+window.innerHeight+' DPR='+window.devicePixelRatio+
+      '\nUA '+navigator.userAgent+'\n\n'+lines.join('\n');
+  },900);
+});
+</script>
+</body></html>
